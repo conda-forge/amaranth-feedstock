@@ -23,7 +23,7 @@ requirements:
   host:
     - python >=3.8
     - pip
-    - pdb-backend
+    - pdm-backend
   run:
     - python >=3.8
     - importlib_metadata
