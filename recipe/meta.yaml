@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vvv
+  script: {{ PYTHON }} -m pip install . -vvv --no-deps
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   entry_points:
