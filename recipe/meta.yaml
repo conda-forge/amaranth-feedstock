@@ -10,8 +10,6 @@ source:
   fn: v{{ version }}.tar.gz
   url: https://github.com/amaranth-lang/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - patches/0001-fix-extras.patch
 
 build:
   number: 0
