@@ -1,6 +1,6 @@
 {% set name = "amaranth" %}
-{% set version = "0.4.3" %}
-{% set sha256 = "5d4aeebb2f3c19647832b8020ca293cf7964a00ed8c47071793e479f90bd38aa" %}
+{% set version = "0.4.4" %}
+{% set sha256 = "c55ad2bbded1daaa41340782a0a40062c5c7ca61c4a59e13648e5049d7d46fbd" %}
 
 package:
   name: {{ name|lower }}
