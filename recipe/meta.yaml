@@ -34,6 +34,10 @@ requirements:
 test:
   imports:
     - amaranth
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/amaranth-lang/amaranth
