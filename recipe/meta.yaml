@@ -1,6 +1,6 @@
 {% set name = "amaranth" %}
-{% set version = "0.4.4" %}
-{% set sha256 = "c55ad2bbded1daaa41340782a0a40062c5c7ca61c4a59e13648e5049d7d46fbd" %}
+{% set version = "0.4.5" %}
+{% set sha256 = "913c2a13274caed077dcdce61ae375ca0b35ad683dd4e615c59ea5bee69cb6b9" %}
 
 package:
   name: {{ name|lower }}
@@ -34,6 +34,10 @@ requirements:
 test:
   imports:
     - amaranth
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/amaranth-lang/amaranth
