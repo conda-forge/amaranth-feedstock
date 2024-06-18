@@ -14,16 +14,16 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vvv --no-deps
+  script: {{ PYTHON }} -m pip install . -vvv --no-deps --no-build-isolation
   script_env:
-    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}.
   entry_points:
     - amaranth-rpc = amaranth.rpc:main
 requirements:
   host:
     - python >=3.8
     - pip
-    - pdm-backend >=2.3,<2.4
+    - pdm-backend
   run:
     - python >=3.8
     - importlib_metadata
