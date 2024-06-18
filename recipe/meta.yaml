@@ -1,6 +1,6 @@
 {% set name = "amaranth" %}
-{% set version = "0.4.5" %}
-{% set sha256 = "913c2a13274caed077dcdce61ae375ca0b35ad683dd4e615c59ea5bee69cb6b9" %}
+{% set version = "0.5.0" %}
+{% set sha256 = "bc7e1d7a91ec59deb4345f7c2ae9819bb22bc58674f489d64778873385c796a1" %}
 
 package:
   name: {{ name|lower }}
@@ -14,9 +14,9 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vvv --no-deps
+  script: {{ PYTHON }} -m pip install . -vvv --no-deps --no-build-isolation
   script_env:
-    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+    - PDM_BUILD_SCM_VERSION={{ version }}
   entry_points:
     - amaranth-rpc = amaranth.rpc:main
 requirements:
@@ -30,6 +30,7 @@ requirements:
     - importlib_resources
     - pyvcd >=0.2.2,<0.5
     - jinja2
+    - jschon
 
 test:
   imports:
