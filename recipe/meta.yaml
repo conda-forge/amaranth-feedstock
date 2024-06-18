@@ -30,6 +30,7 @@ requirements:
     - importlib_resources
     - pyvcd >=0.2.2,<0.5
     - jinja2
+    - jschon
 
 test:
   imports:
