@@ -26,7 +26,7 @@ requirements:
     - pdm-backend
   run:
     - python >=3.8
-    - importlib_metadata
+    - importlib-metadata
     - importlib_resources
     - pyvcd >=0.2.2,<0.5
     - jinja2
