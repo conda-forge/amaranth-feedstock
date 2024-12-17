@@ -21,11 +21,11 @@ build:
     - amaranth-rpc = amaranth.rpc:main
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - pdm-backend
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - importlib-metadata
     - importlib_resources
     - pyvcd >=0.2.2,<0.5
@@ -36,6 +36,7 @@ test:
   imports:
     - amaranth
   requires:
+    - python {{ python_min }}
     - pip
   commands:
     - pip check
