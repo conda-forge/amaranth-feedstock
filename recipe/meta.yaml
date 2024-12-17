@@ -1,6 +1,6 @@
 {% set name = "amaranth" %}
-{% set version = "0.5.3" %}
-{% set sha256 = "fa4ab52ad52bf03aed23184672005b040fbbec6f2e514f8a4501734aa8d473de" %}
+{% set version = "0.5.4" %}
+{% set sha256 = "9af1bf415ce41f6e97f95d66e30c8bbf6f551d6628962fb44afecec0a7a35b45" %}
 
 package:
   name: {{ name|lower }}
@@ -21,11 +21,11 @@ build:
     - amaranth-rpc = amaranth.rpc:main
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - pdm-backend
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - importlib-metadata
     - importlib_resources
     - pyvcd >=0.2.2,<0.5
@@ -36,6 +36,7 @@ test:
   imports:
     - amaranth
   requires:
+    - python {{ python_min }}
     - pip
   commands:
     - pip check
