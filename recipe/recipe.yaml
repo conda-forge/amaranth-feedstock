@@ -1,0 +1,60 @@
+schema_version: 1
+
+context:
+  name: amaranth
+  version: "0.5.9"
+  sha256: babdda5e97ecacaccb87d08b049d760b29154c92c870d231d2829ea894de9ae8
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/amaranth-lang/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: ${{ sha256 }}
+
+build:
+  number: 1
+  noarch: python
+  script:
+    env:
+      PDM_BUILD_SCM_VERSION: ${{ version }}
+    content: ${{ PYTHON }} -m pip install . -vvv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - amaranth-rpc = amaranth.rpc:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - pdm-backend
+  run:
+    - python >=${{ python_min }}
+    - importlib-metadata
+    - importlib_resources
+    - pyvcd >=0.2.2,<0.5
+    - jinja2
+    - jschon
+
+tests:
+  - python:
+      imports:
+        - amaranth
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  license: BSD-2-Clause
+  license_file: LICENSE.txt
+  summary: A modern hardware definition language and toolchain based on Python
+  description: A modern hardware definition language and toolchain based on Python
+  homepage: https://github.com/amaranth-lang/amaranth
+  repository: https://github.com/amaranth-lang/amaranth
+
+extra:
+  recipe-maintainers:
+    - whitequark
+    - timkpaine
