@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: amaranth
-  version: "0.5.9"
-  sha256: babdda5e97ecacaccb87d08b049d760b29154c92c870d231d2829ea894de9ae8
+  version: "0.5.10"
+  sha256: c29cfccff96fd2b88578aac208047f3f80828e928b9d22aba4ba7e499662b7b5
 
 package:
   name: ${{ name|lower }}
@@ -14,7 +14,7 @@ source:
   sha256: ${{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script:
     env:
